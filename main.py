@@ -171,9 +171,6 @@ def decode(cipher_text, userkey):
             flat_list.append(item)
 
     listpairs = [flat_list[i:i + 2] for i in range(0, len(flat_list), 2)]
-    #
-    # print(listpairs)
-    # print(len(listpairs))
 
     columnpositions = [a[0] for a in listpairs]
     rowpositions = [a[1] for a in listpairs]
