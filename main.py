@@ -72,7 +72,7 @@ f.close()
 # and the number of randomly chosen digits of Pi
 
 def randomrotation():
-    randomseed = random.randint(1, len(pidecimals))
+    randomseed = random.randint(1, len(pidecimals)-12)
     length_randomseed = len(str(randomseed))
     deficit = 12 - length_randomseed
 
