@@ -78,7 +78,7 @@ Enter Private Key number 2: 67890
 The Decoded message is : xxxtt
 ```
 
-In the example above, it is difficult for someone to realise that the original text contains just a single alphabet "A", five times. In the first half of the message "A" was encoded as "x" and in the second half as "t".
+In the example above, it is difficult for someone to realise that the original text contains just a single alphabet "A", five times. In the first half of the message "A" was decoded as "x" and in the second half as "t".
 
 **HARD LEVEL**
 
