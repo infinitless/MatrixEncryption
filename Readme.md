@@ -120,4 +120,4 @@ The only thing that can be determined with certainty is the number of alphanumer
 **Conclusion**
 
 1. This is a hobby project and in no way designed to be used for professional or commercial encryption.
-2. I hope users will have as much fun and learning using it as I did programming it.
+2. I hope users will have as much fun in learning using it as I did programming it.
