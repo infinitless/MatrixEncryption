@@ -78,7 +78,7 @@ Enter Private Key number 2: 67890
 The Decoded message is : xxxtt
 ```
 
-In the example above, it is difficult for someone to realise that the original text contains just a single alphabet "A", five times. In the first half of the message "A" was decoded as "x" and in the second half as "t".
+In the example above, it is difficult for someone to realise that the original text contains just a single alphabet "A", five times. In the first half of the message "A" was encoded as "x" and in the second half as "t".
 
 **HARD LEVEL**
 
@@ -93,7 +93,7 @@ The Encoded message is: 2,112,12,22,222,12,12,21,111,211,12,22,12,12,221,2
 Your Master Key is : 634337763159
 ```
 
-The advantage is that a single letter could potentially have 35 different representations, depending on the length of the message. 
+The advantage is that a single letter could potentially have 35 different representations, depending on the length of the message.
 
 ```
 Type 1 for Easy, 2 for Moderate or 3 for Hard: 3
@@ -117,7 +117,57 @@ The Decoded message is : 3kkga
 
 The only thing that can be determined with certainty is the number of alphanumeric characters in the original message. It is impossible to use frequency analysis on the decoded message.
 
+**CREATING YOUR OWN GRID**
+
+If you wish you can create your own grid by putting in your own values for rows and columns defined in the code. Needless to say the only requirement is that each value in the row array (on its own) and the column array (on its own) is unique.
+
+```This is perfectly OK.
+myrows = ["A", "B", "C", "D", "E", "F"]
+mycolumns = ["M", "N", "3", "4", "0", "9"]
+```
+
+This is perfectly OK and will work with the program.
+
+```
+Type 1 for Easy, 2 for Moderate or 3 for Hard: 3
+You chose HARD level encryption.
+Write 1 to Encode or 0 to Decode: 1
+Enter message to be encoded: Hello World
+The Encoded message is: 0F0E4D9E9C9FNBNF0A3A
+Your Master Key is : 729943376055
+```
+
+
+
+You can keep the same values in the `myrows = ["A", "B", "C", "D", "E", "F"]`and `mycolumns = ["A", "B", "C", "D", "E", "F"]`arrays, and that will be OK too. Or you can shuffle the values around too. In this case:
+
+```
+Type 1 for Easy, 2 for Moderate or 3 for Hard: 3
+You chose HARD level encryption.
+Write 1 to Encode or 0 to Decode: 1
+Enter message to be encoded: Hello World
+The Encoded message is: AEFABFCFEDCFBAEBDFAD
+Your Master Key is : 948360280947
+```
+
+
+
+If the values in the myrows and mycolumns array are not unique - the code will still work but the decoder will output unrecognisable strings as it won't know that which column or row does a particular value fall under, as there will be more than one.
+
+So, be careful about defining arrays like this:
+
+```
+myrows = ["A", "B", "C", "D", "E", "F"]
+mycolumns = ["M", "M", "N", "O", "P", "P"]
+```
+
+Needless to say, defining these initial arrays is a matter of personal choice and you can change it when and as you wish! (Having letters instead of the original grid does give away the fact that each character encoded is equivalent to two characters. Therefore, for a human being it might be then easier to compute how many characters are there in the original string.
+
+Above all. No matter how you modify the arrays to your choice - have fun!
+
+
+
 **Conclusion**
 
 1. This is a hobby project and in no way designed to be used for professional or commercial encryption.
-2. I hope users will have as much fun in learning and using it as I did in programming the same.
+2. I hope users will have as much fun and learning using it as I did programming it.
