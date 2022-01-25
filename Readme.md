@@ -51,8 +51,7 @@ Type 1 for Easy, 2 for Moderate or 3 for Hard: 2
 You chose MODERATE level encryption: 
 Write 1 to Encode or 0 to Decode: 1
 Enter message to be encoded: AAAAA
-The Encoded message is 
-22,222,222,2.2,11,12,11,1.
+The Encoded message is 22,222,222,2.2,11,12,11,1.
 Your Keys are: ['585816', '816543']
 ```
 If someone enters random keys, the resulting message will be difficult to crack using frequency analysis unless each part of the message is analysed separately. Therefore, the effort required to frequency-analyse the encoded text is multiplied proportionately.
