@@ -306,7 +306,7 @@ elif levelchoice == "2":
             chunklengths.append(len(str_coded[i]))
             str_final += (codelist[i])
         str_final.rstrip(".")
-        print(f"The Encoded message is \n{str_final}")
+        print(f"The Encoded message is : {str_final}")
         print(f"Your Keys are: {keylist}")
 
     elif choice == "0":
