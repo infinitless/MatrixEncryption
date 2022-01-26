@@ -138,7 +138,7 @@ So please be careful about defining arrays like this:
 myrows = ["A", "B", "C", "D", "E", "F"]
 mycolumns = ["M", "M", "N", "O", "P", "P"]
 ```
-Needless to say, defining these initial arrays is a matter of personal choice and you can change it when and as you wish! (Having letters instead of the original grid does give away the fact that each character encoded is equivalent to two characters. Therefore, for a human being it might be then easier to compute how many characters are there in the original string.
+Needless to say, defining these initial arrays is a matter of personal choice and you can change it when and as you wish! Having letters instead of the original grid does give away the fact that each character encoded is equivalent to two characters. Therefore, for a human being it might be then easier to compute how many characters are there in the original string.
 Above all, no matter how you modify the arrays to your choice - have fun!
 
 **CONCLUSION**
