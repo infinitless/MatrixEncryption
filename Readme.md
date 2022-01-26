@@ -127,6 +127,11 @@ Enter message to be encoded: Hello World
 The Encoded message is: AEFABFCFEDCFBAEBDFAD
 Your Master Key is : 948360280947
 ```
+Or you could get creative:
+```
+myrows = ["H", "O", "L", "M", "E", "S"]
+mycolumns = ["W", "A", "T", "S", "O", "N"]
+```
 If the values in the myrows and mycolumns array are not unique - the code will still work but the decoder will output unrecognisable strings as it won't know that which column or row does a particular value fall under, as there will be more than one.
 So please be careful about defining arrays like this:
 ```
