@@ -239,7 +239,6 @@ def cleanstring(mystring):
     mystring = mystring.replace("\n", "")
     mystring = re.sub("[^0-9a-zA-Z]+", "", mystring)
     mystring = mystring.lower()
-    print(mystring)
     mystring = mystring.translate(str.maketrans('', '', string.punctuation))
     return mystring
 
