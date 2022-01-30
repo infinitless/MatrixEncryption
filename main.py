@@ -28,8 +28,7 @@ positions = [1, 2, 3, 4, 5, 6]
 def rotaterow(myvalues, rowindex, rotation):
     rotatedrow = ""
     newrow = myvalues[rowindex]
-    for nN in range(0, 6):
-        rotatedrow = newrow[rotation % 6:] + newrow[:rotation % 6]
+    rotatedrow = newrow[rotation % 6:] + newrow[:rotation % 6]
     return rotatedrow
 
 
@@ -38,8 +37,7 @@ def rotaterow(myvalues, rowindex, rotation):
 def rotatecolumn(myvalues, columnindex, rotation):
     rotatedcolumn = ""
     newcolumn = [column[columnindex] for column in myvalues]
-    for nm in range(0, 6):
-        rotatedcolumn = newcolumn[rotation % 6:] + newcolumn[:rotation % 6]
+    rotatedcolumn = newcolumn[rotation % 6:] + newcolumn[:rotation % 6]
     return rotatedcolumn
 
 
