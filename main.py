@@ -25,6 +25,7 @@ mycolumns = ["1", "2", "1,1", "1,2", "2,1", "2,2"]
 # Define single row rotation
 
 def rotaterow(myvalues, rowindex, rotation):
+    rotatedrow = ""
     newrow = myvalues[rowindex]
     rotatedrow = newrow[rotation % 6:] + newrow[:rotation % 6]
     return rotatedrow
@@ -33,6 +34,7 @@ def rotaterow(myvalues, rowindex, rotation):
 # Define single column rotation
 
 def rotatecolumn(myvalues, columnindex, rotation):
+    rotatedcolumn = ""
     newcolumn = [column[columnindex] for column in myvalues]
     rotatedcolumn = newcolumn[rotation % 6:] + newcolumn[:rotation % 6]
     return rotatedcolumn
@@ -234,7 +236,10 @@ def creategrid(userkey):
 
 def cleanstring(mystring):
     mystring = mystring.replace(" ", "")
+    mystring = mystring.replace("\n", "")
+    mystring = re.sub("[^0-9a-zA-Z]+", "", mystring)
     mystring = mystring.lower()
+    print(mystring)
     mystring = mystring.translate(str.maketrans('', '', string.punctuation))
     return mystring
 
@@ -330,7 +335,6 @@ elif levelchoice == "3":
     if choice == "1":
         plain_text = input("Enter message to be encoded: ")
         plain_text = cleanstring(plain_text)
-
         keyarray = genkeylist(plain_text)
 
         for n in range(0, len(plain_text)):
