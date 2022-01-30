@@ -16,7 +16,6 @@ values = [
 
 myrows = ["1", "2", "1,1", "1,2", "2,1", "2,2"]
 mycolumns = ["1", "2", "1,1", "1,2", "2,1", "2,2"]
-positions = [1, 2, 3, 4, 5, 6]
 
 
 # The encoded text for any character (alphabet or number) = column + row, joined together
@@ -26,7 +25,6 @@ positions = [1, 2, 3, 4, 5, 6]
 # Define single row rotation
 
 def rotaterow(myvalues, rowindex, rotation):
-    rotatedrow = ""
     newrow = myvalues[rowindex]
     rotatedrow = newrow[rotation % 6:] + newrow[:rotation % 6]
     return rotatedrow
@@ -35,7 +33,6 @@ def rotaterow(myvalues, rowindex, rotation):
 # Define single column rotation
 
 def rotatecolumn(myvalues, columnindex, rotation):
-    rotatedcolumn = ""
     newcolumn = [column[columnindex] for column in myvalues]
     rotatedcolumn = newcolumn[rotation % 6:] + newcolumn[:rotation % 6]
     return rotatedcolumn
@@ -69,6 +66,7 @@ f.close()
 # they will know which digits have been chosen.
 # Now rotate the grid as per the combination of random number
 # and the number of randomly chosen digits of Pi
+
 
 def randomrotation():
     myrandomseed = random.randint(1, len(pidecimals) - 12)
@@ -139,7 +137,7 @@ def findkey(userkey):
     pistring = ""
     for nmm in range(int(userkey) - 1, int(userkey) - 1 + userdeficit):
         pistring += pidecimals[nmm]
-    rotationkey = (str(userkey) + pistring)
+    rotationkey = str(userkey) + pistring
     return rotationkey
 
 
@@ -211,7 +209,6 @@ def genkeylist(inputstring):
     for n in range(myrandomseed - 1, myrandomseed - 1 + deficit):
         pistring += pidecimals[n]
     keystring = str(myrandomseed) + pistring
-    keyuserstring = str(myrandomseed) + pistring
 
     myfirstkey = int(keystring)
 
