@@ -25,7 +25,7 @@ mycolumns = ["1", "2", "1,1", "1,2", "2,1", "2,2"]
 # Define single row rotation
 
 def rotaterow(myvalues, rowindex, rotation):
-    rotatedrow = ""
+
     newrow = myvalues[rowindex]
     rotatedrow = newrow[rotation % 6:] + newrow[:rotation % 6]
     return rotatedrow
@@ -34,7 +34,7 @@ def rotaterow(myvalues, rowindex, rotation):
 # Define single column rotation
 
 def rotatecolumn(myvalues, columnindex, rotation):
-    rotatedcolumn = ""
+
     newcolumn = [column[columnindex] for column in myvalues]
     rotatedcolumn = newcolumn[rotation % 6:] + newcolumn[:rotation % 6]
     return rotatedcolumn
@@ -80,21 +80,8 @@ def randomrotation():
         pistring += pidecimals[nmn]
     rotationkey = (str(myrandomseed) + pistring)
 
-    rotatedrow1 = rotaterow(values, 0, int(rotationkey[0]))
-    rotatedrow2 = rotaterow(values, 1, int(rotationkey[1]))
-    rotatedrow3 = rotaterow(values, 2, int(rotationkey[2]))
-    rotatedrow4 = rotaterow(values, 3, int(rotationkey[3]))
-    rotatedrow5 = rotaterow(values, 4, int(rotationkey[4]))
-    rotatedrow6 = rotaterow(values, 5, int(rotationkey[5]))
-    rotatedrows = [rotatedrow1, rotatedrow2, rotatedrow3, rotatedrow4, rotatedrow5, rotatedrow6]
-
-    rotatedcolumn1 = rotatecolumn(rotatedrows, 0, int(rotationkey[6]))
-    rotatedcolumn2 = rotatecolumn(rotatedrows, 1, int(rotationkey[7]))
-    rotatedcolumn3 = rotatecolumn(rotatedrows, 2, int(rotationkey[8]))
-    rotatedcolumn4 = rotatecolumn(rotatedrows, 3, int(rotationkey[9]))
-    rotatedsolumn5 = rotatecolumn(rotatedrows, 4, int(rotationkey[10]))
-    rotatedcolumn6 = rotatecolumn(rotatedrows, 5, int(rotationkey[11]))
-    rotatedcolumns = [rotatedcolumn1, rotatedcolumn2, rotatedcolumn3, rotatedcolumn4, rotatedsolumn5, rotatedcolumn6]
+    rotatedrows = [rotaterow(values, ijk, int(rotationkey[ijk])) for ijk in range(0, 6)]
+    rotatedcolumns = [rotatecolumn(rotatedrows, ij - 6, int(rotationkey[ij])) for ij in range(6, 12)]
 
     return rotatedcolumns, myrandomseed
 
@@ -102,21 +89,9 @@ def randomrotation():
 # Rotate the reference grid if private key is supplied
 
 def rotateme(privatekey):
-    rotatedrow1 = rotaterow(values, 0, int(privatekey[0]))
-    rotatedrow2 = rotaterow(values, 1, int(privatekey[1]))
-    rotatedrow3 = rotaterow(values, 2, int(privatekey[2]))
-    rotatedrow4 = rotaterow(values, 3, int(privatekey[3]))
-    rotatedrow5 = rotaterow(values, 4, int(privatekey[4]))
-    rotatedrow6 = rotaterow(values, 5, int(privatekey[5]))
-    rotatedrows = [rotatedrow1, rotatedrow2, rotatedrow3, rotatedrow4, rotatedrow5, rotatedrow6]
 
-    rotatedcolumn1 = rotatecolumn(rotatedrows, 0, int(privatekey[6]))
-    rotatedcolumn2 = rotatecolumn(rotatedrows, 1, int(privatekey[7]))
-    rotatedcolumn3 = rotatecolumn(rotatedrows, 2, int(privatekey[8]))
-    rotatedcolumn4 = rotatecolumn(rotatedrows, 3, int(privatekey[9]))
-    rotatedsolumn5 = rotatecolumn(rotatedrows, 4, int(privatekey[10]))
-    rotatedcolumn6 = rotatecolumn(rotatedrows, 5, int(privatekey[11]))
-    rotatedcolumns = [rotatedcolumn1, rotatedcolumn2, rotatedcolumn3, rotatedcolumn4, rotatedsolumn5, rotatedcolumn6]
+    rotatedrows = [rotaterow(values, ijk, int(privatekey[ijk])) for ijk in range(0, 6)]
+    rotatedcolumns = [rotatecolumn(rotatedrows, ij - 6, int(privatekey[ij])) for ij in range(6, 12)]
 
     return rotatedcolumns
 
@@ -174,10 +149,10 @@ def decode(somecipher_text, userkey):
         for item in sublist:
             flat_list.append(item)
 
-    listpairs = [flat_list[ii:ii + 2] for ii in range(0, len(flat_list), 2)]
+    list_pairs = [flat_list[ii:ii + 2] for ii in range(0, len(flat_list), 2)]
 
-    columnpositions = [a[0] for a in listpairs]
-    rowpositions = [a[1] for a in listpairs]
+    columnpositions = [a[0] for a in list_pairs]
+    rowpositions = [a[1] for a in list_pairs]
 
     columnindices = []
     rowindices = []
