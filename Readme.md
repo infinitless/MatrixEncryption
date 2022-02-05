@@ -131,11 +131,30 @@ Or you could get creative:
 myrows = ["H", "O", "L", "M", "E", "S"]
 mycolumns = ["W", "A", "T", "S", "O", "N"]
 ```
-If the values in the myrows and mycolumns array are not unique - the code will still work but the decoder will output unrecognisable strings as it won't know that which column or row does a particular value fall under, as there will be more than one.
-So please be careful about defining arrays like this:
+You can make the values more complicated to a human eye by using a grid like this:
 ```
+myrows = ["SH", "E", "R,L", "O", "C", "K"]
+mycolumns = ["1", "2", "1,1", "1,2", "2,1", "2,2"]
+```
+Will yield:
+```
+Type 1 for Easy, 2 for Moderate or 3 for Hard: 3
+You chose HARD level encryption.
+Write 1 to Encode or 0 to Decode: 1
+Enter message to be encoded: AAAAA
+The Encoded message is: 1,2C1,2SH1,1SH1,1O1,2K
+Your Master Key is : 414239432107
+```
+If the values in the myrows and mycolumns array are not unique - the code will still work but the decoder will output unrecognisable strings as it won't know that which column or row does a particular value fall under, as there will be more than one. However, please note that a grid that uses a value that uses something other than a comma as a separator will not work (it will encode but not decode). Also the decoding will not work if there are more than one characters to the left or right of the comma in the myrows and mycolumns definitions. The following grids will not decode a message:
+```
+myrows = ["SH", "E", "R;L", "O", "C", "K"]
+mycolumns = ["1", "2", "1,1", "1,2", "2,1", "2,2"]
+
+myrows = ["S", "H", "E,RL", "O", "C", "K"]
+mycolumns = ["1", "2", "1,1", "1,2", "2,1", "2,2"]
+
 myrows = ["A", "B", "C", "D", "E", "F"]
-mycolumns = ["M", "M", "N", "O", "P", "P"]
+mycolumns = ["M", "M", "N", "O", "P", "Q"]
 ```
 Needless to say, defining these initial arrays is a matter of personal choice and you can change it when and as you wish! Having letters instead of the original grid does give away the fact that each character encoded is equivalent to two characters. Therefore, for a human being it might be then easier to compute how many characters are there in the original string.
 Above all, no matter how you modify the arrays to your choice - have fun!
@@ -144,3 +163,4 @@ Above all, no matter how you modify the arrays to your choice - have fun!
 
 1. This is a hobby project and in no way designed to be used for professional or commercial encryption.
 2. I hope users will have as much fun and learning using it as I did programming it.
+3. I invite code-crackers to crack the code using frequency analysis and/or brute force: (1) Encode a message in Hard Mode (2) Throw away the key (3) Decode the encoded message using brute force guessing or any other means.
