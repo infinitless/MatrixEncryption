@@ -76,7 +76,7 @@ Enter message to be encoded: Hello World
 The Encoded message is: 2,112,12,22,222,12,12,21,111,211,12,22,12,12,221,2
 Your Master Key is : 634337763159
 ```
-The advantage is that a single letter could potentially have 35 different representations, depending on the length of the message.
+The advantage is that a single letter could potentially have 36 different representations, depending on the length of the message.
 ```
 Type 1 for Easy, 2 for Moderate or 3 for Hard: 3
 You chose HARD level encryption.
