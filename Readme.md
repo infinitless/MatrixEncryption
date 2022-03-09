@@ -4,6 +4,22 @@ A complex algorithm that generates a random substitution grid based on user keys
 This is a hobby project that gives a user the option to encrypt an alphanumeric text message using "Easy", "Moderate", and "Hard" levels.
 The same message will output different encrypted messages in ALL levels as every time the key that the program generates will be different. The number of random grids possible is 36! (36 * 35 * 34 * ... * 1) = 371993326789901217467999448150835200000000. That's a lot!
 
+**REFERENCE GRID**
+```
+values = [
+    ["a", "b", "c", "d", "e", "f"],
+    ["g", "h", "i", "j", "k", "l"],
+    ["m", "n", "o", "p", "q", "r"],
+    ["s", "t", "u", "v", "w", "x"],
+    ["y", "z", "0", "1", "2", "3"],
+    ["4", "5", "6", "7", "8", "9"]
+]
+
+myrows = ["1", "2", "1,1", "1,2", "2,1", "2,2"]
+mycolumns = ["1", "2", "1,1", "1,2", "2,1", "2,2"]
+```
+The encoded text for any character (alphabet or number) = row + column, joined together. Punctuation and spaces are ignored. So "abc" as per Reference grid = 111211,1. That is "a" = first row + first column = 11; "b" = first row + second column = 21 and "c" = first row + third column = 11,1 and so on.
+
 **EASY LEVEL**
 ```
 Type 1 for Easy, 2 for Moderate or 3 for Hard: 1
