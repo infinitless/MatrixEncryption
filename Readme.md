@@ -18,7 +18,7 @@ values = [
 myrows = ["1", "2", "1,1", "1,2", "2,1", "2,2"]
 mycolumns = ["1", "2", "1,1", "1,2", "2,1", "2,2"]
 ```
-The encoded text for any character (alphabet or number) = row + column, joined together. Punctuation and spaces are ignored. So "abc" as per Reference grid = 111211,1. That is "a" = first row + first column = 11; "b" = first row + second column = 21 and "c" = first row + third column = 11,1 and so on.
+The encoded text for any character (alphabet or number) = row + column, joined together. Punctuation and spaces are ignored. So "abc" as per Reference grid = 111211,1. That is "a" = first row + first column = 11; "b" = first row + second column = 12 and "c" = first row + third column = 11,1 and so on.
 
 **EASY LEVEL**
 ```
